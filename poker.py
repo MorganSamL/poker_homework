@@ -56,8 +56,36 @@ class Hand(object):
                 if self.cards[i].get_rank() == self.cards[j].get_rank():
                     return True
         return False
-
-
+    
+    def is_twopair(self):
+        for i in range(5):
+            for j in range(i+1, 5):
+                 if self.cards[i].get_rank() == self.cards[j].get_rank():
+                    self.cards.pop[i]
+                    self.cards.pop[j]
+                    for v in range(3)
+                        for b in range(v+1, 3)
+                            if self.cards[v].get_rank() == self.cards[b].get_rank():
+                            return True
+         return False
+    def is_fourofakind(self):
+        for i in range(5):
+            for j in range(i+1, 5):
+                for v in range(j+2, 5):
+                    for b in range(v+3, 5):
+                        if self.cards[i].get_rank() == self.cards[j].get_rank() and self.cards[i].get_rank() == self.cards[v].get_rank() and self.cards[i].get_rank() == self.cards[b].get_rank():
+                            return True
+        return False
+    
+    def is_flush(self):
+        for i in range(5):
+            for j in range(i+1, 5):
+                for v in range(j+2, 5):
+                    for b in range(v+3, 5):
+                        for n in range(b+4, 5)
+                        if self.cards[i].get_suit() == self.cards[j].get_suit() and self.cards[i].get_suit() == self.cards[v].get_suit() and self.cards[i].get_suit() == self.cards[b].get_suit() and  self.cards[i].get_suit() == self.cards[n].get_suit():
+                            return True
+        return False
 
 
 new_deck = Deck()
